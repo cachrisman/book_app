@@ -5,14 +5,15 @@ var express = require("express"),
 var app = express(),
     views = path.join(__dirname, "views");
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
-app.get("/", function (req, res) {
-  var homePath = path.join(views, "home.html");
-  res.sendFile(homePath);
+app.get("/", function(req, res) {
+    var homePath = path.join(views, "home.html");
+    res.sendFile(homePath);
 });
 
-app.listen(3000, function () {
-  console.log("STARTING");
+app.listen(3000, function() {
+    console.log("STARTING");
 });
-
